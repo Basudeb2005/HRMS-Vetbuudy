@@ -158,7 +158,7 @@ elif panel == "Employee Panel":
     st.subheader(f"Tasks for {username} on {selected_date.strftime('%Y-%m-%d')} 📅")
     if not user_tasks.empty:
         st.dataframe(user_tasks)
-        task_status = st.selectbox("Update Task Status", ['Pending', 'In Progress', 'Completed'])
+        task_status = st.selectbox("Update Task Status", ['Pending', 'In Progress', 'Completed','On Leave(Approved)'])
         if st.button("Update Status"):
             task_df = update_task_status(task_df, username, task_status, selected_date)
             save_data(task_df, TASKS_FILE)
